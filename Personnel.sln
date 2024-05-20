@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34902.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelReg", "PersonnelReg\PersonnelReg.csproj", "{DAC32BE3-5CF6-41AC-AEDC-68B0FEAD2D2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3654CD19-E87A-4151-B0AA-79F73F03583F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAC32BE3-5CF6-41AC-AEDC-68B0FEAD2D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC32BE3-5CF6-41AC-AEDC-68B0FEAD2D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC32BE3-5CF6-41AC-AEDC-68B0FEAD2D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC32BE3-5CF6-41AC-AEDC-68B0FEAD2D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FCD3C3E-FF97-448D-AF3F-2C5AA2EFB4C3}
+	EndGlobalSection
+EndGlobal
