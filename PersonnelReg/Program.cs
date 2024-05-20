@@ -14,23 +14,16 @@
         static void Main(string[] args)
 
         {
-
-            string firstname = "";
-
-
-            Employee person = new Employee();
+           
 
 
-            Console.Write("Enter Employee firstname: ");
-            person.firstname = Console.ReadLine();
-            Console.Write("\n");
-            Console.Write("Enter Employee surname: ");
-            person.surname = Console.Readline();
-            Console.Write("\n");
-            Console.Write("Enter Employee salary: ");
-            person.salary = int.Parse(Console.Readline());
+           Console.WriteLine("Enter employee first name <press enter> " + "then surname <press enter> " + "then salary figure <press enter>");
+           
+           Employee person = new Employee(Console.ReadLine(), Console.ReadLine(), int.Parse(Console.ReadLine()));
+
 
            
+
 
           
 

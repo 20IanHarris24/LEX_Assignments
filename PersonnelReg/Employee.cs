@@ -9,33 +9,31 @@ namespace PersonnelReg
     internal class Employee
     {
 
-        public string firstname = "";
-        public string surname = "";
+        public string firstName;
+        public string surName;
         public int salary;
 
 
-        
-        
-        public Employee(string firstname, string surname, int salary)
+
+
+       public Employee(string firstName, string surName, int salary)
         {
-            this.firstname = firstname;
-            this.surname = surname;
+            this.firstName = firstName;
+            this.surName = surName;
             this.salary = salary;
 
+            DisplayEmployeeDetails(firstName, surName, salary);
 
-            DisplayEmployeeDetails(firstname, surname, salary );
 
+        }
 
-        } 
        
-              
-        
-        
-        
-       
-        private void DisplayEmployeeDetails(string firstname, string surname, int salary)
+
+
+
+        private static void DisplayEmployeeDetails(string firstName, string surName, int salary)
         {
-            Console.WriteLine("\nname: " + firstname + "\nSurname: " + surname + "\nSalary: " + salary);
+            Console.WriteLine("\nFirstname: " + firstName + "\nSurname: " + surName + "\nSalary: " + salary);
         }
 
 
@@ -86,5 +84,3 @@ namespace PersonnelReg
 
 
 
-}
-}
