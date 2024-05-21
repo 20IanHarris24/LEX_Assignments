@@ -16,13 +16,13 @@ namespace PersonnelReg
 
 
 
-       public Employee(string firstName, string surName, int salary)
+       public Employee(string firstName, string surName, string salary)
         {
             this.firstName = firstName;
             this.surName = surName;
-            this.salary = salary;
+            this.salary = int.Parse(salary);
 
-            DisplayEmployeeDetails(firstName, surName, salary);
+            DisplayEmployeeDetails(firstName, surName, this.salary);
 
 
         }
@@ -33,7 +33,8 @@ namespace PersonnelReg
 
         private static void DisplayEmployeeDetails(string firstName, string surName, int salary)
         {
-            Console.WriteLine("\nFirstname: " + firstName + "\nSurname: " + surName + "\nSalary: " + salary);
+            string response = $"Firstname {firstName}\nSurname\t{surName}\nSalary\t{salary}\n" ;
+            Console.WriteLine(response);
         }
 
 

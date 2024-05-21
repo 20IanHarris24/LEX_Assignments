@@ -14,18 +14,24 @@
         static void Main(string[] args)
 
         {
-           
+            
+
+            Console.Write("first name: ");
+            var detail1 = Console.ReadLine();
+            Console.Write("surname: ");
+            var detail2 = Console.ReadLine();
+            Console.Write("salary: ");
+            var detail3 = Console.ReadLine();
 
 
-           Console.WriteLine("Enter employee first name <press enter> " + "then surname <press enter> " + "then salary figure <press enter>");
-           
-           Employee person = new Employee(Console.ReadLine(), Console.ReadLine(), int.Parse(Console.ReadLine()));
+            Employee person = new Employee(detail1, detail2, detail3);
 
 
-           
 
 
-          
+
+
+
 
         }
     }
