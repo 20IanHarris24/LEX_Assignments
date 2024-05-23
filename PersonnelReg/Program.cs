@@ -3,6 +3,8 @@
 
     /*     Qu1. Employee class
      *     Qu2. Attributes: Firstname, Surname, Salary. Methods for printing
+     *     
+     *     updated after watching object tutorials
      */
 
 
