@@ -20,17 +20,55 @@ namespace C_sharpFlowControl
 
 
 
-        private static void YouthOrPensioner()
+        private static void Youth_And_Pensioner()
         {
-            string prompt = "How many are you?";
+            string prompt = "menu choice";
             //string prompt2 = "";
             Console.WriteLine("\nYouth and Pensioner");
-            Console.WriteLine("Here at a theoretical cinema we'll see if you or your party qualify for Youth or Pensioner priced tickets");
+            Console.WriteLine("A cinema where you can enquire the cost of a single ticket based on age and if desired find the cost of a group booking dependant on the group size and age");
+            Console.WriteLine("\n\t1. Single ticket\n\t2. Group tickets");
             uint userResponse = CheckValidInput(prompt); //Checks user input validity "How many people in the party"
             AgeTest(userResponse);  //Passes the response and then allows user enter ages and calculate ticket prices.
 
 
         }
+
+
+
+        private static void Repeat_Ten_Times() 
+        {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+
+
+
+
+
+
+
+
+
 
 
         private static uint CheckValidInput(string prompt) //ensuring the user input is valid i.e. not a control character or letters etc.
@@ -73,6 +111,7 @@ namespace C_sharpFlowControl
 
             List<uint> collecting_ages = new List<uint>();
             string prompt = "Age";
+            string prompt2 = "group size";
             int youth = 0;
             int pensioner = 0;
             int theRest = 0;
@@ -81,13 +120,9 @@ namespace C_sharpFlowControl
             if (userResponse == 1)
             {
 
-                for (int i = 0; i < userResponse; i++)
-                {
+               collecting_ages.Add(CheckValidInput(prompt));
 
-                    collecting_ages.Add(CheckValidInput(prompt));
-
-                }
-
+              
                 foreach (var each_age in collecting_ages)
                 {
 
@@ -108,12 +143,13 @@ namespace C_sharpFlowControl
 
             }
 
-            if (userResponse > 1)
+            if (userResponse == 2)
             {
+                Console.Write($"\nHow many people in the group? ");
+                uint groupSize = (CheckValidInput(prompt2));
 
-                for (int i = 0; i < userResponse; i++)
+                for (int i = 0; i < groupSize; i++)
                 {
-
                     collecting_ages.Add(CheckValidInput(prompt));
 
                 }
@@ -140,10 +176,11 @@ namespace C_sharpFlowControl
                 }
 
 
-                Console.WriteLine($"\tTotal number of people in party: {userResponse}\n\tTotal cost for the party: {(youth * 80) + (pensioner * 90) + (theRest * 120)}kr\n");
+                Console.WriteLine($"\tTotal number of people in party: {groupSize}\n\tTotal cost for the party: {(youth * 80) + (pensioner * 90) + (theRest * 120)}kr\n");
 
             }
-            else
+            else if (userResponse == 0)
+                        
             {
                 Console.WriteLine($"\tNumber of people is: {userResponse}\n\tTotal cost is: {(youth * 80) + (pensioner * 90) + (theRest * 120)}kr\n");
             }
@@ -182,11 +219,11 @@ namespace C_sharpFlowControl
                     break;
 
                 case 1:
-                    YouthOrPensioner();
+                    Youth_And_Pensioner();
                     break;
 
                 case 2:
-                    Console.WriteLine($"To be completed");
+                    Repeat_Ten_Times();
                     break;
 
                 case 3:
