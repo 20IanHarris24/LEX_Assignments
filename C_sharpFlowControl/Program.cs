@@ -7,14 +7,14 @@ namespace C_sharpFlowControl
     {
         static void Main(string[] args)
         {
+            bool running = true;
 
 
-
-            do
+            while (running) 
             {
                 FunctionSelection(ShowMenu()); //Call the Take in the user input and convert the string representation to an integer
 
-            } while (true);
+            }
         }
 
 
@@ -23,7 +23,6 @@ namespace C_sharpFlowControl
         private static void Youth_And_Pensioner()
         {
             string prompt = "menu choice";
-            //string prompt2 = "";
             Console.WriteLine("\nYouth and Pensioner");
             Console.WriteLine("A cinema where you can enquire the cost of a single ticket based on age and if desired find the cost of a group booking dependant on the group size and age");
             Console.WriteLine("\n\t1. Single ticket\n\t2. Group tickets");
@@ -37,31 +36,73 @@ namespace C_sharpFlowControl
 
         private static void Repeat_Ten_Times() 
         {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            string[] TenTimes = new string [10];
+            string prompt = "enter text to be printed";
+
+            Console.WriteLine("\nRepeat Ten Times");
+            Console.WriteLine("A short phrase or sentence and the function will print the enter content in 10 times in a long row");
+            
+            string userResponse = CheckValidText(prompt); //Checks user input validity "How many people in the party"*/
+
+
+            for (int i = 0; i < 10; i++)
+            {
+
+                TenTimes[i] = userResponse;
+                Console.Write($"{i+1}. {TenTimes[i]} ");
+
+
+            }
+            Console.WriteLine("\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
+        private static string CheckValidText(string prompt) //ensuring the user input is valid i.e. not a control character or letters etc.
+        {
 
+            bool success = false;
+            string answer = string.Empty;
+            uint ok_Result = 0;
+
+            do
+
+            {
+                Console.Write($"\n{prompt}: ");
+                answer = Console.ReadLine()!;
+
+                if (string.IsNullOrWhiteSpace(answer) || string.IsNullOrEmpty(answer))
+                {
+                    Console.Write($"\nYou must enter valid {prompt}");
+                }
+              
+                else 
+ 
+                    success = true;
+  
+
+
+            } while (!success);
+
+            return answer;
+        }
 
 
 
@@ -194,8 +235,8 @@ namespace C_sharpFlowControl
         {
 
             string prompt = "menu choice";
-            Console.WriteLine("Test the functions by selecting one of the menu options below\n");
-            Console.Write($"\t1: Youth or Pensioner.\n\t2: Repeat 10 times.\n\t3: The 3rd word.\n");
+            Console.WriteLine("Welcome to the function main menu select an option below\n");
+            Console.Write($"\t0: Shutdown program\n\t1: Youth or Pensioner.\n\t2: Repeat 10 times.\n\t3: The 3rd word.\n");
 
             uint userResponse = CheckValidInput(prompt);
 
@@ -214,7 +255,7 @@ namespace C_sharpFlowControl
             {
 
                 case 0:
-                    Console.WriteLine("Oops, you've just closed the program");
+                    Console.WriteLine("Program shutdown");
                     Environment.Exit(0);
                     break;
 
