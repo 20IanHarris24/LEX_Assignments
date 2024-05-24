@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Linq.Expressions;
+using System.Text;
 
 namespace C_sharpFlowControl
 {
@@ -10,7 +11,7 @@ namespace C_sharpFlowControl
             bool running = true;
 
 
-            while (running) 
+            while (running)
             {
                 FunctionSelection(ShowMenu()); //Call the Take in the user input and convert the string representation to an integer
 
@@ -34,53 +35,64 @@ namespace C_sharpFlowControl
 
 
 
-        private static void Repeat_Ten_Times() 
+        private static void Repeat_Ten_Times()
         {
-            string[] TenTimes = new string [10];
+            string[] TenTimes = new string[10];
             string prompt = "enter text to be printed";
 
             Console.WriteLine("\nRepeat Ten Times");
             Console.WriteLine("A short phrase or sentence and the function will print the enter content in 10 times in a long row");
-            
+
             string userResponse = CheckValidText(prompt); //Checks user input validity "How many people in the party"*/
 
 
-            for (int i = 0; i < 10; i++)
+            for (int count = 0; count < 10; count++)
             {
 
-                TenTimes[i] = userResponse;
-                Console.Write($"{i+1}. {TenTimes[i]} ");
+                TenTimes[count] = userResponse;
+                Console.Write($"{count + 1}. {TenTimes[count]} ");
 
 
             }
             Console.WriteLine("\n");
 
+        }
 
 
 
+        private static void The_Third_Word()
+        {
 
+            string prompt = "sentence";
 
+            Console.WriteLine("\nThe Third Word");
+            Console.WriteLine("This function will take a sentence entered by the user(must be at least 3 words) and will print the 3rd word from that sentence");
 
+            string userResponse = CheckValidText(prompt); //Checks user input validity "enter sentence to be processed"*/
+            string[] thirdWord = userResponse.Split(' ');
 
+            //string[] thirdWord = CheckSentenceLength(userResponse, prompt); will work on trying to get Sentence length test logic to work
 
-
-
-
-
-
-
-
-
-
+            for (int index = 0; index < thirdWord.Length; index++)
+            {
+                if (index == 2)                                                 //
+                {
+                    Console.Write($"\nSentence input \n\t{userResponse}.");
+                    Console.Write($"\nThird word is: {thirdWord[index]}");
+                }
+            }
 
         }
+
+
+
 
         private static string CheckValidText(string prompt) //ensuring the user input is valid i.e. not a control character or letters etc.
         {
 
             bool success = false;
             string answer = string.Empty;
-            uint ok_Result = 0;
+           
 
             do
 
@@ -96,13 +108,48 @@ namespace C_sharpFlowControl
                 else 
  
                     success = true;
-  
-
 
             } while (!success);
 
             return answer;
         }
+
+
+
+       /* private static string[] CheckSentenceLength(string userResponse, string prompt) //ensuring sentence length is at least 3 words but just now can't get the logic to work
+        {
+
+           
+            bool success = false;
+            string[] test = userResponse.Split(' ');
+            string answer;
+
+
+            do
+
+            {
+               
+
+                if (test.Length < 3)
+                {
+                    Console.Write($"\nYou must enter a valid {prompt}");
+
+                    Console.Write($"\n{prompt}: ");
+                    answer = Console.ReadLine()!;
+                    Array.Resize(ref test, test.Length);
+                    string [] test = answer.Split(" ");
+                }
+
+                else
+
+                    success = true;
+
+
+
+            } while (!success);
+
+            return test;
+        }*/
 
 
 
@@ -235,8 +282,8 @@ namespace C_sharpFlowControl
         {
 
             string prompt = "menu choice";
-            Console.WriteLine("Welcome to the function main menu select an option below\n");
-            Console.Write($"\t0: Shutdown program\n\t1: Youth or Pensioner.\n\t2: Repeat 10 times.\n\t3: The 3rd word.\n");
+            Console.WriteLine("\n\nWelcome to the function main menu select an option below\n");
+            Console.Write($"\t0: Shutdown program\n\t1: Youth or Pensioner.\n\t2: Repeat ten times.\n\t3: The 3rd word.\n");
 
             uint userResponse = CheckValidInput(prompt);
 
@@ -268,7 +315,7 @@ namespace C_sharpFlowControl
                     break;
 
                 case 3:
-                    Console.WriteLine($"To be completed");
+                    The_Third_Word();
                     break;
 
                 default:
