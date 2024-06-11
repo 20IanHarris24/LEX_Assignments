@@ -9,20 +9,18 @@ namespace PersonnelReg
     internal class Employee
     {
 
-        public string firstName;
-        public string surName;
-        public int salary;
+        public string Name { get; set; }
+        public int Salary { get; }
 
 
 
 
-       public Employee(string firstName, string surName, string salary)
+       public Employee(string name, int salary)
         {
-            this.firstName = firstName;
-            this.surName = surName;
-            this.salary = int.Parse(salary);
+            Name = name;
+            Salary = salary;
 
-            DisplayEmployeeDetails(firstName, surName, this.salary);
+            
 
 
         }
@@ -31,10 +29,9 @@ namespace PersonnelReg
 
 
 
-        private static void DisplayEmployeeDetails(string firstName, string surName, int salary)
+        private static void DisplayEmployeeDetails(string name,  int salary)
         {
-            string response = $"Firstname {firstName}\nSurname\t{surName}\nSalary\t{salary}\n" ;
-            Console.WriteLine(response);
+            
         }
 
 

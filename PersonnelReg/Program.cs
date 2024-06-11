@@ -18,15 +18,10 @@
         {
             
 
-            Console.Write("first name: ");
-            var detail1 = Console.ReadLine();
-            Console.Write("surname: ");
-            var detail2 = Console.ReadLine();
-            Console.Write("salary: ");
-            var detail3 = Console.ReadLine();
+            
+            Employee person = new Employee("Simon", 36000);
+            int salary = person.Salary;
 
-
-            Employee person = new Employee(detail1, detail2, detail3);
 
 
 

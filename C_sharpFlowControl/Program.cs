@@ -14,7 +14,6 @@ namespace C_sharpFlowControl
             while (running)
             {
                 FunctionSelection(ShowMenu()); //Call the Take in the user input and convert the string representation to an integer
-
             }
         }
 
@@ -29,8 +28,6 @@ namespace C_sharpFlowControl
             Console.WriteLine("\n\t1. Single ticket\n\t2. Group tickets");
             uint userResponse = CheckValidInput(prompt); //Checks user input validity "How many people in the party"
             AgeTest(userResponse);  //Passes the response and then allows user enter ages and calculate ticket prices.
-
-
         }
 
 
@@ -176,14 +173,13 @@ namespace C_sharpFlowControl
                 {
                     Console.Write($"\nYou must enter a valid {prompt}");
                 }
-                if (uint.TryParse(answer, out uint result))
-                {
-                    //Console.WriteLine($"\nConverted {answer} to {result}");
+                    if (uint.TryParse(answer, out uint result))
+                    {
+                        //Console.WriteLine($"\nConverted {answer} to {result}");
 
-                    ok_Result = result;
-                    success = true;
-
-                }
+                        ok_Result = result;
+                        success = true;
+                    }
 
 
             } while (!success);
@@ -248,17 +244,14 @@ namespace C_sharpFlowControl
                     if (each_age < 20)
                     {
                         youth++;
-
                     }
                     else if (each_age > 64)
                     {
                         pensioner++;
-
                     }
                     else
                     {
                         theRest++;
-
                     }
 
                 }
@@ -295,9 +288,6 @@ namespace C_sharpFlowControl
 
         public static void FunctionSelection(uint userChoice) //Select function tree
         {
-
-
-
             switch (userChoice)
             {
 
@@ -324,9 +314,6 @@ namespace C_sharpFlowControl
                     userChoice = CheckValidInput(prompt);
                     FunctionSelection(userChoice);
                     break;
-
-
-
 
             }
         }
